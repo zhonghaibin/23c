@@ -128,7 +128,7 @@
                         $("#password_msg").html('');
                     }
                     if(this.user.email){
-                        let reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+                        let reg = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+(.[a-zA-Z0-9_.-])+/;
                         if(!reg.test(this.user.email)){
                             $("#email_msg").html('Email format error');
                             return false;

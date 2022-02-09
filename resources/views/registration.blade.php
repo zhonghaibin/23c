@@ -27,7 +27,7 @@
                                         </div>
                                         <div class="input-container">
                                             <label class="col-form-label">Name</label>
-                                            <input type="text" class="form-control"  v-model="name" onkeyup="value=value.replace(/[^a-zA-Z]/g,'')">
+                                            <input type="text" class="form-control"  v-model="name" onkeyup="value=value.replace(/[^ a-zA-Z]/g,'')">
                                             <strong style="color: red" id="name_msg"></strong>
                                         </div>
                                         <div class="input-container">
@@ -69,7 +69,7 @@
                                         <div style="margin-top: 6px">
                                             <label class="checkbox-inline" style="color: #c9c9c9">
                                                 <input type="checkbox" name="nda"  v-model="nda"> I have read and agree to 23C's
-                                                Noo-Disclosure Agreement <a href="javascript:;" @click="nad()"> (NDA)</a>
+                                                Non-Disclosure Agreement <a href="javascript:;" @click="nad()"> (NDA)</a>
                                             </label>
                                             <br/>
                                             <strong style="color: red" id="nda_msg"></strong>
@@ -278,7 +278,7 @@
                     }
                     $("#password_msg").html('');
                     if(this.email){
-                        let reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+                        let reg = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+(.[a-zA-Z0-9_.-])+/;
                         if(!reg.test(this.email)){
                             $("#email_msg").html('Email format error');
                             return false;

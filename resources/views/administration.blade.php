@@ -280,7 +280,7 @@
                 <div class="input-container">
                     <label class="col-form-label">Name</label>
                     <input type="text" class="form-control" v-model="name"
-                           onkeyup="value=value.replace(/[^a-zA-Z]/g,'')">
+                           onkeyup="value=value.replace(/[^ a-zA-Z]/g,'')">
                     <strong style="color: red" id="name_msg"></strong>
                 </div>
                 <div class="input-container">
@@ -662,7 +662,7 @@
                     }
                     $("#password_msg").html('');
                     if (this.email) {
-                        let reg = /^([a-zA-Z]|[0-9])(\w|\-)+@[a-zA-Z0-9]+\.([a-zA-Z]{2,4})$/;
+                        let reg = /^([a-zA-Z0-9_.-])+@([a-zA-Z0-9_.-])+(.[a-zA-Z0-9_.-])+/;
                         if (!reg.test(this.email)) {
                             $("#add_email_msg").html('Email format error');
                             return false;
